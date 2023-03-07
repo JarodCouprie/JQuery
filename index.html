@@ -9,8 +9,40 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="maDiv">
+    <!-- <div id="maDiv">
+    </div> -->
+    <h2>
+        Exercice 1 : Nombre de clique
+    </h2>
+    <div id="affichage-plus">
     </div>
+    <button id="click-plus">
+        Click for +1
+    </button>
+    <h2>
+        Exercice 2 : Le formulaire
+    </h2>
+    <form id="formulaire">
+        <label for="nom">
+            Nom
+        </label>
+        <input type="text" id="nom" name="nom" required>
+        <br><br>
+        <label for="prenom">
+            Prénom
+        </label>
+        <input type="text" id="prenom" name="prenom" required>
+        <br><br>
+        <label for="annee-de-naissance">
+            Année de naissance
+        </label>
+        <input type="number" id="annee-de-naissance" name="annee-de-naissance" min="1900" max="2023" required>
+        <br><br>
+        <input id="sumbit-button" type="submit" value="Envoyer">
+    </form>
+    <div id="info-nom"></div>
+    <div id="info-prenom"></div>
+    <div id="info-age"></div>
 </body>
 
 </html>
