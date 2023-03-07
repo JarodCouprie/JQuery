@@ -18,9 +18,9 @@ $("#click-plus").click(function(){
 });
 
 //EXERCICE 2
+
 $("#formulaire").submit(function(e){
     e.preventDefault();
-    //$("#infos").html($("#nom").val() + $("#prenom").val() + $("#date-de-naissance").val());
     if((typeof $("#nom").val() === "string") && isNaN($("#nom").val())){
         $("#info-nom").html($("#nom").val());
     }else{
@@ -36,4 +36,42 @@ $("#formulaire").submit(function(e){
     }else{
         $("#annee-de-naissance").css("background-color","red");
     };
+});
+
+//EXERCICE 3
+
+$("#random-color").click(function(){
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    $("body").css("background-color","#"+randomColor);
+});
+
+$("#color-change").submit(function(e){
+    e.preventDefault();
+
+    let rouge = $("#rouge").val();
+    let vert = $("#vert").val();
+    let bleu = $("#bleu").val();
+
+    let isRougeTrue = (rouge >= 0 && rouge <= 255);
+    let isVertTrue = (vert >= 0 && vert <= 255);
+    let isBleuTrue = (bleu >= 0 && bleu <= 255);
+
+    if (!isRougeTrue || (typeof rouge === String)){
+        $("#rouge").css("border-color","red");
+        $("#rouge").trigger("focus");
+    };
+    if (!isVertTrue || (typeof vert === String)){
+        $("#vert").css("border-color","red");
+        $("#vert").trigger("focus");
+    };
+    if (!isBleuTrue || (typeof bleu === String)){
+        $("#bleu").css("border-color","red");
+        $("#bleu").trigger("focus");
+    };
+    if (isRougeTrue && isVertTrue && isBleuTrue){
+        $("body").css("background-color","rgb("+rouge+","+vert+","+bleu+")");
+        $("#bleu").css("border-color","");
+        $("#vert").css("border-color","");
+        $("#rouge").css("border-color","");
+    }
 });
