@@ -17,3 +17,23 @@ $("#click-plus").click(function(){
     $("#affichage-plus").html(i);
 });
 
+//EXERCICE 2
+$("#formulaire").submit(function(e){
+    e.preventDefault();
+    //$("#infos").html($("#nom").val() + $("#prenom").val() + $("#date-de-naissance").val());
+    if((typeof $("#nom").val() === "string") && isNaN($("#nom").val())){
+        $("#info-nom").html($("#nom").val());
+    }else{
+        $("#nom").css("background-color","red");
+    };
+    if((typeof $("#prenom").val() === "string") && isNaN($("#prenom").val())){
+        $("#info-prenom").html($("#prenom").val());
+    }else{
+        $("#prenom").css("background-color","red");
+    };
+    if ($("#annee-de-naissance").val() > 1900 && $("#annee-de-naissance").val() <= 2023){
+        $("#info-age").html(2023 - $("#annee-de-naissance").val()+"ans");
+    }else{
+        $("#annee-de-naissance").css("background-color","red");
+    };
+});
